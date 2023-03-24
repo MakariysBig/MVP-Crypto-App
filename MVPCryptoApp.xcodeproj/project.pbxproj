@@ -13,16 +13,21 @@
 		AB14CDA229CB42D30010306B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB14CDA029CB42D30010306B /* LaunchScreen.storyboard */; };
 		AB14CDAC29CB43300010306B /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CDAB29CB43300010306B /* UserDefaultsManager.swift */; };
 		AB14CDB129CB43840010306B /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CDAE29CB43840010306B /* Endpoints.swift */; };
-		AB14CDB229CB43840010306B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CDAF29CB43840010306B /* Repository.swift */; };
+		AB14CDB229CB43840010306B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CDAF29CB43840010306B /* NetworkManager.swift */; };
 		AB14CDB329CB43840010306B /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CDB029CB43840010306B /* NetworkEngine.swift */; };
 		AB14CE0029CB43D10010306B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CDFF29CB43D10010306B /* LoginViewController.swift */; };
 		AB14CE0529CB43EB0010306B /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE0229CB43EB0010306B /* CryptoViewController.swift */; };
 		AB14CE0629CB43EB0010306B /* CryptoCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE0329CB43EB0010306B /* CryptoCustomTableViewCell.swift */; };
-		AB14CE0729CB43EB0010306B /* CryptoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE0429CB43EB0010306B /* CryptoView.swift */; };
 		AB14CE0B29CB43FC0010306B /* DescribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE0929CB43FC0010306B /* DescribeViewController.swift */; };
-		AB14CE0C29CB43FC0010306B /* DescribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE0A29CB43FC0010306B /* DescribeView.swift */; };
 		AB14CE0F29CB44090010306B /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE0E29CB44090010306B /* CryptoModel.swift */; };
 		AB14CE1229CB44740010306B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB14CE1129CB44740010306B /* SnapKit */; };
+		AB14CE1529CB4F700010306B /* CryptoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE1429CB4F700010306B /* CryptoPresenter.swift */; };
+		AB14CE1729CB4FCB0010306B /* CryptoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE1629CB4FCB0010306B /* CryptoProtocols.swift */; };
+		AB14CE1929CB55EC0010306B /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE1829CB55EC0010306B /* ModuleBuilder.swift */; };
+		AB14CE1C29CC83510010306B /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE1B29CC83510010306B /* LoginPresenter.swift */; };
+		AB14CE1E29CC83590010306B /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE1D29CC83590010306B /* LoginProtocols.swift */; };
+		AB14CE6B29CDAF9E0010306B /* DescribePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE6A29CDAF9E0010306B /* DescribePresenter.swift */; };
+		AB14CE7029CDB9800010306B /* DescribeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE6F29CDB9800010306B /* DescribeProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,15 +39,20 @@
 		AB14CDA329CB42D30010306B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB14CDAB29CB43300010306B /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		AB14CDAE29CB43840010306B /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		AB14CDAF29CB43840010306B /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		AB14CDAF29CB43840010306B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AB14CDB029CB43840010306B /* NetworkEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		AB14CDFF29CB43D10010306B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB14CE0229CB43EB0010306B /* CryptoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoViewController.swift; sourceTree = "<group>"; };
 		AB14CE0329CB43EB0010306B /* CryptoCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCustomTableViewCell.swift; sourceTree = "<group>"; };
-		AB14CE0429CB43EB0010306B /* CryptoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoView.swift; sourceTree = "<group>"; };
 		AB14CE0929CB43FC0010306B /* DescribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescribeViewController.swift; sourceTree = "<group>"; };
-		AB14CE0A29CB43FC0010306B /* DescribeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescribeView.swift; sourceTree = "<group>"; };
 		AB14CE0E29CB44090010306B /* CryptoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
+		AB14CE1429CB4F700010306B /* CryptoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPresenter.swift; sourceTree = "<group>"; };
+		AB14CE1629CB4FCB0010306B /* CryptoProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoProtocols.swift; sourceTree = "<group>"; };
+		AB14CE1829CB55EC0010306B /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		AB14CE1B29CC83510010306B /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		AB14CE1D29CC83590010306B /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		AB14CE6A29CDAF9E0010306B /* DescribePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribePresenter.swift; sourceTree = "<group>"; };
+		AB14CE6F29CDB9800010306B /* DescribeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribeProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +87,11 @@
 			isa = PBXGroup;
 			children = (
 				AB14CDA929CB42E70010306B /* Delegate */,
+				AB14CE6529CDA9010010306B /* ModuleBuilder */,
 				AB14CDAD29CB43840010306B /* NetworkLayer */,
-				AB14CDFE29CB43C20010306B /* LoginScreen */,
-				AB14CE0129CB43D90010306B /* CryptoScreen */,
+				AB14CE6829CDABF80010306B /* LoginModule */,
+				AB14CE6129CDA3240010306B /* CryptoModule */,
+				AB14CE0829CB43FC0010306B /* DescibeModule */,
 				AB14CDAA29CB42F60010306B /* SupportsFile */,
 			);
 			path = MVPCryptoApp;
@@ -109,47 +121,138 @@
 			isa = PBXGroup;
 			children = (
 				AB14CDAE29CB43840010306B /* Endpoints.swift */,
-				AB14CDAF29CB43840010306B /* Repository.swift */,
+				AB14CDAF29CB43840010306B /* NetworkManager.swift */,
 				AB14CDB029CB43840010306B /* NetworkEngine.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
-		AB14CDFE29CB43C20010306B /* LoginScreen */ = {
+		AB14CDFE29CB43C20010306B /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
 				AB14CDFF29CB43D10010306B /* LoginViewController.swift */,
 			);
-			path = LoginScreen;
+			path = LoginView;
 			sourceTree = "<group>";
 		};
-		AB14CE0129CB43D90010306B /* CryptoScreen */ = {
+		AB14CE0829CB43FC0010306B /* DescibeModule */ = {
 			isa = PBXGroup;
 			children = (
-				AB14CE0229CB43EB0010306B /* CryptoViewController.swift */,
-				AB14CE0429CB43EB0010306B /* CryptoView.swift */,
-				AB14CE0329CB43EB0010306B /* CryptoCustomTableViewCell.swift */,
-				AB14CE0829CB43FC0010306B /* DescibeScreen */,
-				AB14CE0D29CB44090010306B /* Models */,
+				AB14CE6C29CDB3BF0010306B /* DescribeView */,
+				AB14CE6D29CDB3CE0010306B /* DescribePresenter */,
+				AB14CE6E29CDB96F0010306B /* DescribeProtocol */,
 			);
-			path = CryptoScreen;
+			path = DescibeModule;
 			sourceTree = "<group>";
 		};
-		AB14CE0829CB43FC0010306B /* DescibeScreen */ = {
+		AB14CE1329CB4F650010306B /* CryptoPresenter */ = {
 			isa = PBXGroup;
 			children = (
-				AB14CE0929CB43FC0010306B /* DescribeViewController.swift */,
-				AB14CE0A29CB43FC0010306B /* DescribeView.swift */,
+				AB14CE1429CB4F700010306B /* CryptoPresenter.swift */,
 			);
-			path = DescibeScreen;
+			path = CryptoPresenter;
 			sourceTree = "<group>";
 		};
-		AB14CE0D29CB44090010306B /* Models */ = {
+		AB14CE1A29CC833A0010306B /* LoginPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB14CE1B29CC83510010306B /* LoginPresenter.swift */,
+			);
+			path = LoginPresenter;
+			sourceTree = "<group>";
+		};
+		AB14CE6129CDA3240010306B /* CryptoModule */ = {
+			isa = PBXGroup;
+			children = (
+				AB14CE6229CDA3590010306B /* CryptoModel */,
+				AB14CE6429CDA3C80010306B /* CryptoView */,
+				AB14CE1329CB4F650010306B /* CryptoPresenter */,
+				AB14CE6629CDA9DB0010306B /* CryotoProtocol */,
+				AB14CE6729CDAA160010306B /* CryptoCustomCell */,
+			);
+			path = CryptoModule;
+			sourceTree = "<group>";
+		};
+		AB14CE6229CDA3590010306B /* CryptoModel */ = {
 			isa = PBXGroup;
 			children = (
 				AB14CE0E29CB44090010306B /* CryptoModel.swift */,
 			);
-			path = Models;
+			path = CryptoModel;
+			sourceTree = "<group>";
+		};
+		AB14CE6429CDA3C80010306B /* CryptoView */ = {
+			isa = PBXGroup;
+			children = (
+				AB14CE0229CB43EB0010306B /* CryptoViewController.swift */,
+			);
+			path = CryptoView;
+			sourceTree = "<group>";
+		};
+		AB14CE6529CDA9010010306B /* ModuleBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				AB14CE1829CB55EC0010306B /* ModuleBuilder.swift */,
+			);
+			path = ModuleBuilder;
+			sourceTree = "<group>";
+		};
+		AB14CE6629CDA9DB0010306B /* CryotoProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				AB14CE1629CB4FCB0010306B /* CryptoProtocols.swift */,
+			);
+			path = CryotoProtocol;
+			sourceTree = "<group>";
+		};
+		AB14CE6729CDAA160010306B /* CryptoCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB14CE0329CB43EB0010306B /* CryptoCustomTableViewCell.swift */,
+			);
+			path = CryptoCustomCell;
+			sourceTree = "<group>";
+		};
+		AB14CE6829CDABF80010306B /* LoginModule */ = {
+			isa = PBXGroup;
+			children = (
+				AB14CDFE29CB43C20010306B /* LoginView */,
+				AB14CE1A29CC833A0010306B /* LoginPresenter */,
+				AB14CE6929CDAC1C0010306B /* LoginProtocol */,
+			);
+			path = LoginModule;
+			sourceTree = "<group>";
+		};
+		AB14CE6929CDAC1C0010306B /* LoginProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				AB14CE1D29CC83590010306B /* LoginProtocols.swift */,
+			);
+			path = LoginProtocol;
+			sourceTree = "<group>";
+		};
+		AB14CE6C29CDB3BF0010306B /* DescribeView */ = {
+			isa = PBXGroup;
+			children = (
+				AB14CE0929CB43FC0010306B /* DescribeViewController.swift */,
+			);
+			path = DescribeView;
+			sourceTree = "<group>";
+		};
+		AB14CE6D29CDB3CE0010306B /* DescribePresenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB14CE6A29CDAF9E0010306B /* DescribePresenter.swift */,
+			);
+			path = DescribePresenter;
+			sourceTree = "<group>";
+		};
+		AB14CE6E29CDB96F0010306B /* DescribeProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				AB14CE6F29CDB9800010306B /* DescribeProtocol.swift */,
+			);
+			path = DescribeProtocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,19 +331,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB14CE1729CB4FCB0010306B /* CryptoProtocols.swift in Sources */,
 				AB14CE0029CB43D10010306B /* LoginViewController.swift in Sources */,
 				AB14CE0B29CB43FC0010306B /* DescribeViewController.swift in Sources */,
 				AB14CD9629CB42D10010306B /* AppDelegate.swift in Sources */,
 				AB14CD9829CB42D10010306B /* SceneDelegate.swift in Sources */,
-				AB14CE0729CB43EB0010306B /* CryptoView.swift in Sources */,
-				AB14CE0C29CB43FC0010306B /* DescribeView.swift in Sources */,
 				AB14CE0629CB43EB0010306B /* CryptoCustomTableViewCell.swift in Sources */,
 				AB14CDB329CB43840010306B /* NetworkEngine.swift in Sources */,
-				AB14CDB229CB43840010306B /* Repository.swift in Sources */,
+				AB14CE1E29CC83590010306B /* LoginProtocols.swift in Sources */,
+				AB14CE1C29CC83510010306B /* LoginPresenter.swift in Sources */,
+				AB14CE1529CB4F700010306B /* CryptoPresenter.swift in Sources */,
+				AB14CE7029CDB9800010306B /* DescribeProtocol.swift in Sources */,
+				AB14CDB229CB43840010306B /* NetworkManager.swift in Sources */,
 				AB14CE0F29CB44090010306B /* CryptoModel.swift in Sources */,
 				AB14CDB129CB43840010306B /* Endpoints.swift in Sources */,
+				AB14CE6B29CDAF9E0010306B /* DescribePresenter.swift in Sources */,
 				AB14CDAC29CB43300010306B /* UserDefaultsManager.swift in Sources */,
 				AB14CE0529CB43EB0010306B /* CryptoViewController.swift in Sources */,
+				AB14CE1929CB55EC0010306B /* ModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

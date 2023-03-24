@@ -11,9 +11,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         if !UserDefaultsManager.userIsLogin {
-            window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+            window?.rootViewController = UINavigationController(rootViewController: ModuleBuilder.createLoginModule())
         } else {
-            window?.rootViewController = UINavigationController(rootViewController: CryptoViewController())
+            window?.rootViewController = UINavigationController(rootViewController: ModuleBuilder.createCryptoModule())
         }
     }
 

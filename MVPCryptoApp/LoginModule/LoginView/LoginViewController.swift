@@ -3,6 +3,10 @@ import SnapKit
 
 final class LoginViewController: UIViewController {
     
+    //MARK: - Internal properties
+    
+    var presenter: LoginPresenterProtocol?
+    
     //MARK: - Private properties
     
     private let userNameTextfield: UITextField = {
@@ -45,10 +49,6 @@ final class LoginViewController: UIViewController {
         setupDelegate()
     }
     
-    deinit {
-        print("deinit vc")
-    }
-    
     //MARK: - Override methods
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -89,43 +89,17 @@ final class LoginViewController: UIViewController {
         loginButton.addTarget(self, action: #selector(goToMainScreen), for: .touchUpInside)
     }
     
-    private func changeBorderColor() {
-        if userNameTextfield.text != "1234" {
-            userNameTextfield.layer.borderWidth = 1
-            userNameTextfield.layer.borderColor = UIColor.systemRed.cgColor
-        } else {
-            userNameTextfield.layer.borderColor = UIColor.black.cgColor
-        }
-        
-        if passwordTextfield.text != "1234" {
-            passwordTextfield.layer.borderWidth = 1
-            passwordTextfield.layer.borderColor = UIColor.systemRed.cgColor
-        } else {
-            passwordTextfield.layer.borderColor = UIColor.black.cgColor
-        }
-    }
-    
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let actionCopy = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(actionCopy)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     //MARK: - Actions
     
     @objc private func goToMainScreen() {
+        let userName = userNameTextfield.text
+        let password = passwordTextfield.text
         
-        if userNameTextfield.text == "1234",
-           passwordTextfield.text == "1234" {
-            UserDefaultsManager.userIsLogin = true
-            let vc = UINavigationController(rootViewController: CryptoViewController())
+        if presenter?.checkData(userName: userName, password: password) == true {
+            let vc = UINavigationController(rootViewController: ModuleBuilder.createCryptoModule())
             vc.modalTransitionStyle = .flipHorizontal
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
-        } else {
-//            changeBorderColor()
-            showAlert(title: "Please fill all the fields!!!", message: "Login: 1234\nPassword: 1234")
         }
     }
 }
@@ -140,5 +114,16 @@ extension LoginViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
+    }
+}
+
+//MARK: - Extension: LoginViewProtocol
+
+extension LoginViewController: LoginViewProtocol {
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let actionCopy = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(actionCopy)
+        self.present(alert, animated: true, completion: nil)
     }
 }
