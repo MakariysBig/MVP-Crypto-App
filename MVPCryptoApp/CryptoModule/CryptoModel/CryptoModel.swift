@@ -16,8 +16,8 @@ struct Crypto: Codable {
 }
 
 struct MarketData: Codable {
-    let priceUsd: Double
-    let percentChangeUsdLast24Hours: Double
+    let priceUsd: Double?
+    let percentChangeUsdLast24Hours: Double?
 
     enum CodingKeys: String, CodingKey {
         case priceUsd = "price_usd"
@@ -25,14 +25,13 @@ struct MarketData: Codable {
     }
 }
 
-enum NameOfCrypto: String {
+enum NameOfCrypto: String, CaseIterable {
     case btc      = "btc"
     case eth      = "eth"
     case tron     = "tron"
     case luna     = "luna"
     case polkadot = "polkadot"
     case dogecoin = "dogecoin"
-    case teather  = "teather"
     case stellar  = "stellar"
     case cardano  = "cardano"
     case xrp      = "xrp"

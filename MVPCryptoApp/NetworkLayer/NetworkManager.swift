@@ -4,7 +4,7 @@ protocol RepositoryProtocol {
     func getCrypto(pair: String, completion: @escaping (Result< CryptoModel, Error >) -> Void)
 }
 
-final class Repository: RepositoryProtocol {
+final class NetworkManager: RepositoryProtocol {
     private let networkEngine: NetworkEngine
 
     init(networkEngine: NetworkEngine = NetworkEngine()) {
