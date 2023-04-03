@@ -91,7 +91,7 @@
 				AB14CDAD29CB43840010306B /* NetworkLayer */,
 				AB14CE6829CDABF80010306B /* LoginModule */,
 				AB14CE6129CDA3240010306B /* CryptoModule */,
-				AB14CE0829CB43FC0010306B /* DescibeModule */,
+				AB14CE0829CB43FC0010306B /* DescribeModule */,
 				AB14CDAA29CB42F60010306B /* SupportsFile */,
 			);
 			path = MVPCryptoApp;
@@ -127,66 +127,66 @@
 			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
-		AB14CDFE29CB43C20010306B /* LoginView */ = {
+		AB14CDFE29CB43C20010306B /* View */ = {
 			isa = PBXGroup;
 			children = (
 				AB14CDFF29CB43D10010306B /* LoginViewController.swift */,
 			);
-			path = LoginView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		AB14CE0829CB43FC0010306B /* DescibeModule */ = {
+		AB14CE0829CB43FC0010306B /* DescribeModule */ = {
 			isa = PBXGroup;
 			children = (
-				AB14CE6C29CDB3BF0010306B /* DescribeView */,
-				AB14CE6D29CDB3CE0010306B /* DescribePresenter */,
-				AB14CE6E29CDB96F0010306B /* DescribeProtocol */,
+				AB14CE6C29CDB3BF0010306B /* View */,
+				AB14CE6D29CDB3CE0010306B /* Presenter */,
+				AB14CE6E29CDB96F0010306B /* Protocol */,
 			);
-			path = DescibeModule;
+			path = DescribeModule;
 			sourceTree = "<group>";
 		};
-		AB14CE1329CB4F650010306B /* CryptoPresenter */ = {
+		AB14CE1329CB4F650010306B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				AB14CE1429CB4F700010306B /* CryptoPresenter.swift */,
 			);
-			path = CryptoPresenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
-		AB14CE1A29CC833A0010306B /* LoginPresenter */ = {
+		AB14CE1A29CC833A0010306B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				AB14CE1B29CC83510010306B /* LoginPresenter.swift */,
 			);
-			path = LoginPresenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		AB14CE6129CDA3240010306B /* CryptoModule */ = {
 			isa = PBXGroup;
 			children = (
-				AB14CE6229CDA3590010306B /* CryptoModel */,
-				AB14CE6429CDA3C80010306B /* CryptoView */,
-				AB14CE1329CB4F650010306B /* CryptoPresenter */,
-				AB14CE6629CDA9DB0010306B /* CryotoProtocol */,
+				AB14CE6229CDA3590010306B /* Model */,
+				AB14CE6429CDA3C80010306B /* View */,
+				AB14CE1329CB4F650010306B /* Presenter */,
+				AB14CE6629CDA9DB0010306B /* Protocol */,
 				AB14CE6729CDAA160010306B /* CryptoCustomCell */,
 			);
 			path = CryptoModule;
 			sourceTree = "<group>";
 		};
-		AB14CE6229CDA3590010306B /* CryptoModel */ = {
+		AB14CE6229CDA3590010306B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				AB14CE0E29CB44090010306B /* CryptoModel.swift */,
 			);
-			path = CryptoModel;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		AB14CE6429CDA3C80010306B /* CryptoView */ = {
+		AB14CE6429CDA3C80010306B /* View */ = {
 			isa = PBXGroup;
 			children = (
 				AB14CE0229CB43EB0010306B /* CryptoViewController.swift */,
 			);
-			path = CryptoView;
+			path = View;
 			sourceTree = "<group>";
 		};
 		AB14CE6529CDA9010010306B /* ModuleBuilder */ = {
@@ -197,12 +197,12 @@
 			path = ModuleBuilder;
 			sourceTree = "<group>";
 		};
-		AB14CE6629CDA9DB0010306B /* CryotoProtocol */ = {
+		AB14CE6629CDA9DB0010306B /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				AB14CE1629CB4FCB0010306B /* CryptoProtocols.swift */,
 			);
-			path = CryotoProtocol;
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		AB14CE6729CDAA160010306B /* CryptoCustomCell */ = {
@@ -216,43 +216,43 @@
 		AB14CE6829CDABF80010306B /* LoginModule */ = {
 			isa = PBXGroup;
 			children = (
-				AB14CDFE29CB43C20010306B /* LoginView */,
-				AB14CE1A29CC833A0010306B /* LoginPresenter */,
-				AB14CE6929CDAC1C0010306B /* LoginProtocol */,
+				AB14CDFE29CB43C20010306B /* View */,
+				AB14CE1A29CC833A0010306B /* Presenter */,
+				AB14CE6929CDAC1C0010306B /* Protocol */,
 			);
 			path = LoginModule;
 			sourceTree = "<group>";
 		};
-		AB14CE6929CDAC1C0010306B /* LoginProtocol */ = {
+		AB14CE6929CDAC1C0010306B /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				AB14CE1D29CC83590010306B /* LoginProtocols.swift */,
 			);
-			path = LoginProtocol;
+			path = Protocol;
 			sourceTree = "<group>";
 		};
-		AB14CE6C29CDB3BF0010306B /* DescribeView */ = {
+		AB14CE6C29CDB3BF0010306B /* View */ = {
 			isa = PBXGroup;
 			children = (
 				AB14CE0929CB43FC0010306B /* DescribeViewController.swift */,
 			);
-			path = DescribeView;
+			path = View;
 			sourceTree = "<group>";
 		};
-		AB14CE6D29CDB3CE0010306B /* DescribePresenter */ = {
+		AB14CE6D29CDB3CE0010306B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				AB14CE6A29CDAF9E0010306B /* DescribePresenter.swift */,
 			);
-			path = DescribePresenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
-		AB14CE6E29CDB96F0010306B /* DescribeProtocol */ = {
+		AB14CE6E29CDB96F0010306B /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				AB14CE6F29CDB9800010306B /* DescribeProtocol.swift */,
 			);
-			path = DescribeProtocol;
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -5,7 +5,7 @@ final class CryptoViewController: UIViewController {
     //MARK: - Internal properties
     
     var presenter: CryptoPresenterProtocol?
-
+    
     //MARK: - Private properties
     
     private var cryptoArray = [Crypto]()
@@ -18,16 +18,24 @@ final class CryptoViewController: UIViewController {
         view.tableHeaderView = UIView()
         return view
     }()
-
+    
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView()
         spinner.isHidden = true
         spinner.color = .label
         return spinner
     }()
-                
+    
+    private let sortButton: UIButton = {
+        let button = UIButton(type: .system)
+        let image = UIImage(systemName: "arrow.down")
+        button.setTitle("Sort", for: .normal)
+        button.setImage(image, for: .normal)
+        return button
+    }()
+    
     //MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
@@ -50,6 +58,8 @@ final class CryptoViewController: UIViewController {
                                                             style: .done,
                                                             target: self,
                                                             action: #selector(logOutButton))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: sortButton)
+        sortButton.addTarget(self, action: #selector(sortData), for: .touchUpInside)
     }
     
     private func setupDelegate() {
@@ -66,6 +76,8 @@ final class CryptoViewController: UIViewController {
         spinner.isHidden = true
         spinner.stopAnimating()
     }
+    
+    //MARK: - Setup layout
     
     private func setupLayout() {
         view.backgroundColor = .systemBackground
@@ -91,6 +103,10 @@ final class CryptoViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .coverVertical
         present(vc, animated: true)
+    }
+    
+    @objc private func sortData() {
+        presenter?.sortData()
     }
 }
 
@@ -120,6 +136,14 @@ extension CryptoViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Extension: CryptoViewProtocol
 
 extension CryptoViewController: CryptoViewProtocol {
+    func updateButtonImage(with state: SortState) {
+        if state == .up {
+            sortButton.setImage( UIImage(systemName: "arrow.down"), for: .normal)
+        } else {
+            sortButton.setImage( UIImage(systemName: "arrow.up"), for: .normal)
+        }
+    }
+    
     func showAlert(title: String, message: String) {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

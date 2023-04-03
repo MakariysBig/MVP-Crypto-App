@@ -1,10 +1,10 @@
 import Foundation
 
-protocol RepositoryProtocol {
+protocol NetworkProtocol {
     func getCrypto(pair: String, completion: @escaping (Result< CryptoModel, Error >) -> Void)
 }
 
-final class NetworkManager: RepositoryProtocol {
+final class NetworkManager: NetworkProtocol {
     private let networkEngine: NetworkEngine
 
     init(networkEngine: NetworkEngine = NetworkEngine()) {

@@ -36,3 +36,8 @@ enum NameOfCrypto: String, CaseIterable {
     case cardano  = "cardano"
     case xrp      = "xrp"
 }
+
+enum SortState {
+    case up
+    case down
+}
