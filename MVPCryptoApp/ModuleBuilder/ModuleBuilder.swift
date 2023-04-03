@@ -18,7 +18,8 @@ final class ModuleBuilder: Builder {
     static func createCryptoModule() -> UIViewController {
         let VC = CryptoViewController()
         let model = [Crypto]()
-        let presenter = CryptoPresenter(VC: VC, model: model)
+        let networkManager = NetworkManager()
+        let presenter = CryptoPresenter(VC: VC, networkManager: networkManager, model: model)
         VC.presenter = presenter
         
         return VC
