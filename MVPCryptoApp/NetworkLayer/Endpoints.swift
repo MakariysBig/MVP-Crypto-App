@@ -4,7 +4,6 @@ protocol Endpoint {
     var scheme: String { get }
     var baseURl: String { get }
     var path: String { get }
-    var parameters: [URLQueryItem] { get }
     var method: String { get }
 }
 //MARK: - CryptoEndpoint
@@ -29,13 +28,6 @@ enum CryptoEndpoint: Endpoint {
         switch self {
         case .getData(let pair):
             return "/api/v1/assets/\(pair)/metrics"
-        }
-    }
-    
-    var parameters: [URLQueryItem] {
-        switch self {
-        case .getData:
-            return []
         }
     }
 

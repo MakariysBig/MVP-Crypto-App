@@ -7,7 +7,6 @@ final class NetworkEngine {
         components.scheme = endpoint.scheme
         components.host = endpoint.baseURl
         components.path = endpoint.path
-        components.queryItems = endpoint.parameters
         
         guard let url = components.url else { return }
 

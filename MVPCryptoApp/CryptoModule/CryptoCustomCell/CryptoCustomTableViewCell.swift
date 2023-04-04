@@ -66,17 +66,9 @@ final class CryptoCustomTableViewCell: UITableViewCell {
     func updateCell(model: Crypto) {
         let percent = model.marketData.percentChangeUsdLast24Hours
         let amount = model.marketData.priceUsd
-
-        cryptoName.text = model.name + "(\(model.symbol)) ="
-        if let amount = amount {
-            cryptoAmount.text = String(format: "%.2f", amount) + "$"
-        } else {
-            cryptoAmount.text = "n/d"
-        }
         
-        guard let percent = percent else {
-            return changesValue.text = "n/d"
-        }
+        cryptoName.text = model.name + "(\(model.symbol)) ="
+        cryptoAmount.text = String(format: "%.2f", amount) + "$"
         
         if percent >= 0 {
             changesValue.text = "+" + String(format: "%.2f", percent) + "%"

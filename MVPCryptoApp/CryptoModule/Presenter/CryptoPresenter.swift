@@ -35,21 +35,12 @@ final class CryptoPresenter: CryptoPresenterProtocol {
     func sortData() {
         if sortState == .up {
             sortState = .down
-            cryptoArray = cryptoArray.sorted { firstValue, secondValue in
-                let firstValue = firstValue.marketData.priceUsd
-                let secondValue = secondValue.marketData.priceUsd
-                return Double(firstValue ?? 0.0) > Double(secondValue ?? 0.0)
-            }
+            cryptoArray = cryptoArray.sorted { $0.marketData.priceUsd > $1.marketData.priceUsd }
         } else {
             sortState = .up
-            cryptoArray = cryptoArray.sorted { firstValue, secondValue in
-                let firstValue = firstValue.marketData.priceUsd
-                let secondValue = secondValue.marketData.priceUsd
-                return Double(firstValue ?? 0.0) < Double(secondValue ?? 0.0)
-            }
+            cryptoArray = cryptoArray.sorted { $0.marketData.priceUsd < $1.marketData.priceUsd }
         }
         VC?.updateButtonImage(with: sortState ?? .down)
-        VC?.updateView(with: cryptoArray)
     }
     
     func getData() {
@@ -67,9 +58,8 @@ final class CryptoPresenter: CryptoPresenterProtocol {
             }
         }
         
-        dispatchGroup.notify(queue: .main) { [weak self] in
-            guard let self = self else { return }
-            self.VC?.updateView(with: self.cryptoArray)
+        dispatchGroup.notify(queue: .main) {
+            self.VC?.updateView()
         }
     }
 }
