@@ -16,9 +16,9 @@ final class NetworkEngine {
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: urlRequest) { data, response, error in
-
-            guard error == nil else {
-                completion(.failure(error!))
+            
+            if let error = error {
+                completion(.failure(error))
                 return
             }
 

@@ -7,14 +7,14 @@ final class CryptoPresenter: CryptoPresenterProtocol {
     
     private weak var VC: CryptoViewProtocol?
     private var networkManager: NetworkProtocol?
-    private var modelArray: [Crypto]
+    private var cryptoArray: [Crypto]
     private var sortState: SortState?
 
     //MARK: - Initialise
     
     init(VC: CryptoViewProtocol, networkManager: NetworkProtocol, model: [Crypto]) {
         self.VC = VC
-        self.modelArray = model
+        self.cryptoArray = model
         self.networkManager = networkManager
     }
     
@@ -24,24 +24,32 @@ final class CryptoPresenter: CryptoPresenterProtocol {
         UserDefaultsManager.userIsLogin = false
     }
     
+    func getArrayCount() -> Int {
+        cryptoArray.count
+    }
+    
+    func getModel(with index: Int) -> Crypto {
+        return cryptoArray[index]
+    }
+    
     func sortData() {
         if sortState == .up {
             sortState = .down
-            modelArray = modelArray.sorted { firstValue, secondValue in
+            cryptoArray = cryptoArray.sorted { firstValue, secondValue in
                 let firstValue = firstValue.marketData.priceUsd
                 let secondValue = secondValue.marketData.priceUsd
                 return Double(firstValue ?? 0.0) > Double(secondValue ?? 0.0)
             }
         } else {
             sortState = .up
-            modelArray = modelArray.sorted { firstValue, secondValue in
+            cryptoArray = cryptoArray.sorted { firstValue, secondValue in
                 let firstValue = firstValue.marketData.priceUsd
                 let secondValue = secondValue.marketData.priceUsd
                 return Double(firstValue ?? 0.0) < Double(secondValue ?? 0.0)
             }
         }
         VC?.updateButtonImage(with: sortState ?? .down)
-        VC?.updateView(with: modelArray)
+        VC?.updateView(with: cryptoArray)
     }
     
     func getData() {
@@ -51,17 +59,17 @@ final class CryptoPresenter: CryptoPresenterProtocol {
                 guard let self = self else { return }
                 switch result {
                 case .success(let data):
-                    self.modelArray.append(data.data)
+                    self.cryptoArray.append(data.data)
                     self.dispatchGroup.leave()
-                case .failure(_):
-                    self.VC?.showAlert(title: "Network Error", message: "Bad internet connection")
+                case .failure(let error):
+                    self.VC?.networkError(with: error)
                 }
             }
         }
         
         dispatchGroup.notify(queue: .main) { [weak self] in
             guard let self = self else { return }
-            self.VC?.updateView(with: self.modelArray)
+            self.VC?.updateView(with: self.cryptoArray)
         }
     }
 }
