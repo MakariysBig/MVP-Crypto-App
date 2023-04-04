@@ -1,7 +1,7 @@
 import Foundation
 
 protocol CryptoViewProtocol: AnyObject {
-    func updateView(with model: [Crypto])
+    func updateView()
     func updateButtonImage(with state: SortState)
     func networkError(with error: Error)
 }

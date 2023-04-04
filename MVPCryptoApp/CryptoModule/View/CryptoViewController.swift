@@ -40,6 +40,10 @@ final class CryptoViewController: UIViewController {
         setup()
     }
     
+    deinit {
+        print("deinit")
+    }
+    
     //MARK: - Methods
     
     private func setup() {
@@ -147,6 +151,7 @@ extension CryptoViewController: CryptoViewProtocol {
         } else {
             sortButton.setImage( UIImage(systemName: "arrow.up"), for: .normal)
         }
+        tableView.reloadData()
     }
     
     func showAlert(title: String, message: String) {
@@ -159,13 +164,13 @@ extension CryptoViewController: CryptoViewProtocol {
         }
     }
     
-    func updateView(with model: [Crypto]) {
+    func updateView() {
         self.stopSpinner()
         self.tableView.reloadData()
     }
     
     func networkError(with error: Error) {
         self.stopSpinner()
-        self.showAlert(title: "We have problem", message: "\(error.localizedDescription)")
+        self.showAlert(title: "We have a problem", message: "\(error.localizedDescription)")
     }
 }
