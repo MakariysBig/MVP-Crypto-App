@@ -7,9 +7,7 @@ final class CryptoViewController: UIViewController {
     var presenter: CryptoPresenterProtocol?
     
     //MARK: - Private properties
-    
-    private var cryptoArray = [Crypto]()
-    
+        
     private let tableView: UITableView = {
         let view = UITableView()
         view.backgroundColor = .clear
@@ -114,22 +112,29 @@ final class CryptoViewController: UIViewController {
 
 extension CryptoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        cryptoArray.count
+        presenter?.getArrayCount() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CryptoCustomTableViewCell.identifier, for: indexPath) as? CryptoCustomTableViewCell else { return UITableViewCell() }
-       
+        let model = presenter?.getModel(with: indexPath.row)
+        if let model = model  {
+            cell.updateCell(model: model)
+        }
+        
         cell.backgroundColor = .clear
         cell.selectionStyle = .blue
-        cell.updateCell(model: cryptoArray[indexPath.row])
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = ModuleBuilder.createDescribeModule(with: cryptoArray[indexPath.row])
-        navigationController?.pushViewController(vc, animated: true)
+        let model = presenter?.getModel(with: indexPath.row)
+        if let model = model  {
+            let vc = ModuleBuilder.createDescribeModule(with: model)
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
@@ -156,7 +161,11 @@ extension CryptoViewController: CryptoViewProtocol {
     
     func updateView(with model: [Crypto]) {
         self.stopSpinner()
-        self.cryptoArray = model
         self.tableView.reloadData()
+    }
+    
+    func networkError(with error: Error) {
+        self.stopSpinner()
+        self.showAlert(title: "We have problem", message: "\(error.localizedDescription)")
     }
 }

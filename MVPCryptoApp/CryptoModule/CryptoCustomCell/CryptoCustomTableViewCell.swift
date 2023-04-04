@@ -39,8 +39,6 @@ final class CryptoCustomTableViewCell: UITableViewCell {
         stack.axis = .horizontal
         stack.distribution = .fill
         stack.spacing = 5
-        stack.heightAnchor.constraint(equalToConstant: 15).isActive = true
-        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
@@ -49,8 +47,6 @@ final class CryptoCustomTableViewCell: UITableViewCell {
         stack.axis = .horizontal
         stack.distribution = .fill
         stack.spacing = 5
-        stack.heightAnchor.constraint(equalToConstant: 15).isActive = true
-        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
@@ -105,15 +101,15 @@ final class CryptoCustomTableViewCell: UITableViewCell {
         super.updateConstraints()
         
         topStackView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(10)
             $0.left.equalToSuperview().offset(14)
             $0.right.lessThanOrEqualTo(self.snp.right).inset(10)
-            $0.top.equalToSuperview().offset(10)
         }
         
         bottomStackView.snp.makeConstraints {
+            $0.top.equalTo(topStackView.snp.bottom).offset(5)
             $0.left.equalToSuperview().offset(14)
             $0.right.lessThanOrEqualTo(self.snp.right).inset(10)
-            $0.top.equalTo(topStackView.snp.bottom).offset(10)
         }
     }
 }
