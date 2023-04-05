@@ -9,11 +9,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
+        let navController = UINavigationController()
+        let moduleBuilder = ModuleBuilder()
+        let router = MainRouter(navigationController: navController, moduleBuilder: moduleBuilder)
         
         if !UserDefaultsManager.userIsLogin {
-            window?.rootViewController = UINavigationController(rootViewController: ModuleBuilder.createLoginModule())
+            router.initialLoginViewController()
+            window?.rootViewController = navController
         } else {
-            window?.rootViewController = UINavigationController(rootViewController: ModuleBuilder.createCryptoModule())
+            router.initialCryptoViewController()
+            window?.rootViewController = navController
         }
     }
 

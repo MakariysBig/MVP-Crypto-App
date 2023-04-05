@@ -9,34 +9,15 @@ final class DescribeViewController: UIViewController {
     
     //MARK: - Private properties
     
+    private let cryptoAmountLabel = UILabel()
+    private let changes24Label    = UILabel()
+    private let changes1Label     = UILabel()
+    private let allTimeHighLabel  = UILabel()
+    private let rankInWordLabel   = UILabel()
+    
     private let cryptoNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
-        return label
-    }()
-    
-    private let cryptoAmountLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
-    
-    private let changes24Label: UILabel = {
-        let label = UILabel()
-        return label
-    }()
-    
-    private let changes1Label: UILabel = {
-        let label = UILabel()
-        return label
-    }()
-    
-    private let allTimeHighLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
-    
-    private let rankInWordLabel: UILabel = {
-        let label = UILabel()
         return label
     }()
     
@@ -56,6 +37,8 @@ final class DescribeViewController: UIViewController {
         setupLayout()
         presenter?.getData()
     }
+    
+    //MARK: - Private methods
     
     private func setupLayout() {
         view.backgroundColor = .systemBackground
@@ -86,9 +69,9 @@ final class DescribeViewController: UIViewController {
 
 extension DescribeViewController: DescribeViewProtocol {
     func updateView(with model: Crypto) {
-        let price = model.marketData.priceUsd
+        let price     = model.marketData.priceUsd
         let changes24 = model.marketData.percentChangeUsdLast24Hours
-        let changes1 = model.marketData.percentChangeUsdLast1Hour
+        let changes1  = model.marketData.percentChangeUsdLast1Hour
         
         cryptoNameLabel.text   = model.name + "(\(model.symbol))"
         rankInWordLabel.text   = "Rank in the world - №" + String(model.marketcap.rank)
@@ -96,6 +79,6 @@ extension DescribeViewController: DescribeViewProtocol {
         cryptoAmountLabel.text = "Price: " + String(format: "%.2f", price) + "$"
 
         changes24Label.attributedText = changeStringColor(mainString: "24h changes: ", value: changes24)
-        changes1Label.attributedText = changeStringColor(mainString: "1h changes: ", value: changes1)
+        changes1Label.attributedText  = changeStringColor(mainString: "1h changes: ", value: changes1)
     }
 }

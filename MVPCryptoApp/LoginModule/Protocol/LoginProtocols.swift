@@ -5,5 +5,8 @@ protocol LoginViewProtocol: AnyObject {
 }
 
 protocol LoginPresenterProtocol {
+    init(VC: LoginViewProtocol, router: MainRouterProtocol)
+    
     func checkData(userName: String?, password: String?) -> Bool
+    func goToCryptoModel()
 }

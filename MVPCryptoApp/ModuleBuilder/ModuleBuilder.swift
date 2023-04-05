@@ -1,13 +1,13 @@
 import UIKit
 
-protocol Builder {
-    static func createCryptoModule() -> UIViewController
-    static func createLoginModule() -> UIViewController
-    static func createDescribeModule(with model: Crypto) -> UIViewController
+protocol ModuleBuilderProtocol {
+    func createCryptoModule(router: MainRouterProtocol) -> UIViewController
+    func createLoginModule(router: MainRouterProtocol) -> UIViewController
+    func createDescribeModule(with model: Crypto, router: MainRouterProtocol) -> UIViewController
 }
 
-final class ModuleBuilder: Builder {
-    static func createDescribeModule(with model: Crypto) -> UIViewController {
+final class ModuleBuilder: ModuleBuilderProtocol {
+    func createDescribeModule(with model: Crypto, router: MainRouterProtocol) -> UIViewController {
         let VC = DescribeViewController()
         let presenter = DescribePresenter(VC: VC, model: model)
         VC.presenter = presenter
@@ -15,19 +15,19 @@ final class ModuleBuilder: Builder {
         return VC
     }
     
-    static func createCryptoModule() -> UIViewController {
+    func createCryptoModule(router: MainRouterProtocol) -> UIViewController {
         let VC = CryptoViewController()
         let model = [Crypto]()
         let networkManager = NetworkManager()
-        let presenter = CryptoPresenter(VC: VC, networkManager: networkManager, model: model)
+        let presenter = CryptoPresenter(VC: VC, networkManager: networkManager, model: model, router: router)
         VC.presenter = presenter
         
         return VC
     }
     
-    static func createLoginModule() -> UIViewController {
+    func createLoginModule(router: MainRouterProtocol) -> UIViewController {
         let VC = LoginViewController()
-        let presenter = LoginPresenter(VC: VC)
+        let presenter = LoginPresenter(VC: VC, router: router)
         VC.presenter = presenter
         
         return VC

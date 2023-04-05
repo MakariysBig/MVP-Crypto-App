@@ -1,27 +1,35 @@
 import Foundation
 
 final class CryptoPresenter: CryptoPresenterProtocol {
+    
     //MARK: - Private properties
     
     private let dispatchGroup = DispatchGroup()
-    
+    private let router: MainRouterProtocol?
+    private let networkManager: NetworkProtocol?
+
     private weak var VC: CryptoViewProtocol?
-    private var networkManager: NetworkProtocol?
     private var cryptoArray: [Crypto]
     private var sortState: SortState?
 
     //MARK: - Initialise
     
-    init(VC: CryptoViewProtocol, networkManager: NetworkProtocol, model: [Crypto]) {
+    init(VC: CryptoViewProtocol, networkManager: NetworkProtocol, model: [Crypto], router: MainRouterProtocol) {
         self.VC = VC
         self.cryptoArray = model
         self.networkManager = networkManager
+        self.router = router
     }
     
     //MARK: - Internal methods
     
+    func showDetailModule(model: Crypto) {
+        router?.showDetail(model: model)
+    }
+    
     func logOut() {
         UserDefaultsManager.userIsLogin = false
+        router?.initialLoginViewController()
     }
     
     func getArrayCount() -> Int {
