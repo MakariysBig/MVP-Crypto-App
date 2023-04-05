@@ -96,10 +96,7 @@ final class LoginViewController: UIViewController {
         let password = passwordTextfield.text
         
         if presenter?.checkData(userName: userName, password: password) == true {
-            let vc = UINavigationController(rootViewController: ModuleBuilder.createCryptoModule())
-            vc.modalTransitionStyle = .flipHorizontal
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true)
+            presenter?.goToCryptoModel()
         }
     }
 }

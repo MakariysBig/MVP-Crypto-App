@@ -7,11 +7,12 @@ protocol CryptoViewProtocol: AnyObject {
 }
 
 protocol CryptoPresenterProtocol {
-    init(VC: CryptoViewProtocol, networkManager: NetworkProtocol, model: [Crypto])
+    init(VC: CryptoViewProtocol, networkManager: NetworkProtocol, model: [Crypto], router: MainRouterProtocol)
     
     func getData()
     func logOut()
     func sortData()
     func getArrayCount() -> Int
     func getModel(with index: Int) -> Crypto
+    func showDetailModule(model: Crypto)
 }

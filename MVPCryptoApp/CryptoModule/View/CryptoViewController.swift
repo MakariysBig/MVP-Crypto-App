@@ -40,10 +40,6 @@ final class CryptoViewController: UIViewController {
         setup()
     }
     
-    deinit {
-        print("deinit")
-    }
-    
     //MARK: - Methods
     
     private func setup() {
@@ -101,10 +97,6 @@ final class CryptoViewController: UIViewController {
     
     @objc private func logOutButton() {
         presenter?.logOut()
-        let vc = UINavigationController(rootViewController: ModuleBuilder.createLoginModule())
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .coverVertical
-        present(vc, animated: true)
     }
     
     @objc private func sortData() {
@@ -136,8 +128,7 @@ extension CryptoViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let model = presenter?.getModel(with: indexPath.row)
         if let model = model  {
-            let vc = ModuleBuilder.createDescribeModule(with: model)
-            navigationController?.pushViewController(vc, animated: true)
+            presenter?.showDetailModule(model: model)
         }
     }
 }

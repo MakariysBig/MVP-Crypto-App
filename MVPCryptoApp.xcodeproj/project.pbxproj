@@ -28,6 +28,7 @@
 		AB14CE1E29CC83590010306B /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE1D29CC83590010306B /* LoginProtocols.swift */; };
 		AB14CE6B29CDAF9E0010306B /* DescribePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE6A29CDAF9E0010306B /* DescribePresenter.swift */; };
 		AB14CE7029CDB9800010306B /* DescribeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE6F29CDB9800010306B /* DescribeProtocol.swift */; };
+		AB89A79129DD684A00132651 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB89A79029DD684A00132651 /* RouterProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		AB14CE1D29CC83590010306B /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		AB14CE6A29CDAF9E0010306B /* DescribePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribePresenter.swift; sourceTree = "<group>"; };
 		AB14CE6F29CDB9800010306B /* DescribeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribeProtocol.swift; sourceTree = "<group>"; };
+		AB89A79029DD684A00132651 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				AB14CDA929CB42E70010306B /* Delegate */,
+				AB89A78F29DD644B00132651 /* Router */,
 				AB14CE6529CDA9010010306B /* ModuleBuilder */,
 				AB14CDAD29CB43840010306B /* NetworkLayer */,
 				AB14CE6829CDABF80010306B /* LoginModule */,
@@ -255,6 +258,14 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		AB89A78F29DD644B00132651 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AB89A79029DD684A00132651 /* RouterProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,6 +348,7 @@
 				AB14CD9629CB42D10010306B /* AppDelegate.swift in Sources */,
 				AB14CD9829CB42D10010306B /* SceneDelegate.swift in Sources */,
 				AB14CE0629CB43EB0010306B /* CryptoCustomTableViewCell.swift in Sources */,
+				AB89A79129DD684A00132651 /* RouterProtocol.swift in Sources */,
 				AB14CDB329CB43840010306B /* NetworkEngine.swift in Sources */,
 				AB14CE1E29CC83590010306B /* LoginProtocols.swift in Sources */,
 				AB14CE1C29CC83510010306B /* LoginPresenter.swift in Sources */,
