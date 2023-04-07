@@ -4,7 +4,7 @@ final class DescribePresenter: DescribePresenterProtocol {
     
     //MARK: - Properties
     
-    weak var VC: DescribeViewProtocol?
+    private weak var VC: DescribeViewProtocol?
     private let model: Crypto
     
     //MARK: - Initialise

@@ -1,11 +1,5 @@
 import UIKit
 
-protocol ModuleBuilderProtocol {
-    func createCryptoModule(router: MainRouterProtocol) -> UIViewController
-    func createLoginModule(router: MainRouterProtocol) -> UIViewController
-    func createDescribeModule(with model: Crypto, router: MainRouterProtocol) -> UIViewController
-}
-
 final class ModuleBuilder: ModuleBuilderProtocol {
     func createDescribeModule(with model: Crypto, router: MainRouterProtocol) -> UIViewController {
         let VC = DescribeViewController()
@@ -17,9 +11,8 @@ final class ModuleBuilder: ModuleBuilderProtocol {
     
     func createCryptoModule(router: MainRouterProtocol) -> UIViewController {
         let VC = CryptoViewController()
-        let model = [Crypto]()
         let networkManager = NetworkManager()
-        let presenter = CryptoPresenter(VC: VC, networkManager: networkManager, model: model, router: router)
+        let presenter = CryptoPresenter(VC: VC, networkManager: networkManager, router: router)
         VC.presenter = presenter
         
         return VC

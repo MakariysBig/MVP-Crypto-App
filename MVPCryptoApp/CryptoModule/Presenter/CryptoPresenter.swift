@@ -9,14 +9,13 @@ final class CryptoPresenter: CryptoPresenterProtocol {
     private let networkManager: NetworkProtocol?
 
     private weak var VC: CryptoViewProtocol?
-    private var cryptoArray: [Crypto]
+    private var cryptoArray = [Crypto]()
     private var sortState: SortState?
 
     //MARK: - Initialise
     
-    init(VC: CryptoViewProtocol, networkManager: NetworkProtocol, model: [Crypto], router: MainRouterProtocol) {
+    init(VC: CryptoViewProtocol, networkManager: NetworkProtocol, router: MainRouterProtocol) {
         self.VC = VC
-        self.cryptoArray = model
         self.networkManager = networkManager
         self.router = router
     }
