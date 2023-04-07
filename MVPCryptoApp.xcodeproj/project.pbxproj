@@ -12,7 +12,7 @@
 		AB14CD9F29CB42D30010306B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB14CD9E29CB42D30010306B /* Assets.xcassets */; };
 		AB14CDA229CB42D30010306B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB14CDA029CB42D30010306B /* LaunchScreen.storyboard */; };
 		AB14CDAC29CB43300010306B /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CDAB29CB43300010306B /* UserDefaultsManager.swift */; };
-		AB14CDB129CB43840010306B /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CDAE29CB43840010306B /* Endpoints.swift */; };
+		AB14CDB129CB43840010306B /* CryptoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CDAE29CB43840010306B /* CryptoEndpoint.swift */; };
 		AB14CDB229CB43840010306B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CDAF29CB43840010306B /* NetworkManager.swift */; };
 		AB14CDB329CB43840010306B /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CDB029CB43840010306B /* NetworkEngine.swift */; };
 		AB14CE0029CB43D10010306B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CDFF29CB43D10010306B /* LoginViewController.swift */; };
@@ -29,6 +29,9 @@
 		AB14CE6B29CDAF9E0010306B /* DescribePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE6A29CDAF9E0010306B /* DescribePresenter.swift */; };
 		AB14CE7029CDB9800010306B /* DescribeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB14CE6F29CDB9800010306B /* DescribeProtocol.swift */; };
 		AB89A79129DD684A00132651 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB89A79029DD684A00132651 /* RouterProtocol.swift */; };
+		AB89A84929E036EA00132651 /* ModuleBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB89A84829E036EA00132651 /* ModuleBuilderProtocol.swift */; };
+		AB89A84B29E0371700132651 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB89A84A29E0371700132651 /* MainRouter.swift */; };
+		AB89A84D29E0379400132651 /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB89A84C29E0379400132651 /* EndpointProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +42,7 @@
 		AB14CDA129CB42D30010306B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB14CDA329CB42D30010306B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB14CDAB29CB43300010306B /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		AB14CDAE29CB43840010306B /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		AB14CDAE29CB43840010306B /* CryptoEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoEndpoint.swift; sourceTree = "<group>"; };
 		AB14CDAF29CB43840010306B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AB14CDB029CB43840010306B /* NetworkEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		AB14CDFF29CB43D10010306B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +58,9 @@
 		AB14CE6A29CDAF9E0010306B /* DescribePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribePresenter.swift; sourceTree = "<group>"; };
 		AB14CE6F29CDB9800010306B /* DescribeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribeProtocol.swift; sourceTree = "<group>"; };
 		AB89A79029DD684A00132651 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		AB89A84829E036EA00132651 /* ModuleBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderProtocol.swift; sourceTree = "<group>"; };
+		AB89A84A29E0371700132651 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		AB89A84C29E0379400132651 /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +129,8 @@
 		AB14CDAD29CB43840010306B /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				AB14CDAE29CB43840010306B /* Endpoints.swift */,
+				AB14CDAE29CB43840010306B /* CryptoEndpoint.swift */,
+				AB89A84C29E0379400132651 /* EndpointProtocol.swift */,
 				AB14CDAF29CB43840010306B /* NetworkManager.swift */,
 				AB14CDB029CB43840010306B /* NetworkEngine.swift */,
 			);
@@ -196,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				AB14CE1829CB55EC0010306B /* ModuleBuilder.swift */,
+				AB89A84829E036EA00132651 /* ModuleBuilderProtocol.swift */,
 			);
 			path = ModuleBuilder;
 			sourceTree = "<group>";
@@ -262,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				AB89A79029DD684A00132651 /* RouterProtocol.swift */,
+				AB89A84A29E0371700132651 /* MainRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -348,15 +357,18 @@
 				AB14CD9629CB42D10010306B /* AppDelegate.swift in Sources */,
 				AB14CD9829CB42D10010306B /* SceneDelegate.swift in Sources */,
 				AB14CE0629CB43EB0010306B /* CryptoCustomTableViewCell.swift in Sources */,
+				AB89A84D29E0379400132651 /* EndpointProtocol.swift in Sources */,
 				AB89A79129DD684A00132651 /* RouterProtocol.swift in Sources */,
 				AB14CDB329CB43840010306B /* NetworkEngine.swift in Sources */,
+				AB89A84B29E0371700132651 /* MainRouter.swift in Sources */,
 				AB14CE1E29CC83590010306B /* LoginProtocols.swift in Sources */,
 				AB14CE1C29CC83510010306B /* LoginPresenter.swift in Sources */,
 				AB14CE1529CB4F700010306B /* CryptoPresenter.swift in Sources */,
 				AB14CE7029CDB9800010306B /* DescribeProtocol.swift in Sources */,
 				AB14CDB229CB43840010306B /* NetworkManager.swift in Sources */,
+				AB89A84929E036EA00132651 /* ModuleBuilderProtocol.swift in Sources */,
 				AB14CE0F29CB44090010306B /* CryptoModel.swift in Sources */,
-				AB14CDB129CB43840010306B /* Endpoints.swift in Sources */,
+				AB14CDB129CB43840010306B /* CryptoEndpoint.swift in Sources */,
 				AB14CE6B29CDAF9E0010306B /* DescribePresenter.swift in Sources */,
 				AB14CDAC29CB43300010306B /* UserDefaultsManager.swift in Sources */,
 				AB14CE0529CB43EB0010306B /* CryptoViewController.swift in Sources */,

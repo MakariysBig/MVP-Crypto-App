@@ -40,7 +40,7 @@ final class CryptoViewController: UIViewController {
         setup()
     }
     
-    //MARK: - Methods
+    //MARK: - Private methods
     
     private func setup() {
         title = "Crypto info"

@@ -1,13 +1,17 @@
 import Foundation
 
+//MARK: - View
+
 protocol CryptoViewProtocol: AnyObject {
     func updateView()
     func updateButtonImage(with state: SortState)
     func networkError(with error: Error)
 }
 
+//MARK: - Presenter
+
 protocol CryptoPresenterProtocol {
-    init(VC: CryptoViewProtocol, networkManager: NetworkProtocol, model: [Crypto], router: MainRouterProtocol)
+    init(VC: CryptoViewProtocol, networkManager: NetworkProtocol, router: MainRouterProtocol)
     
     func getData()
     func logOut()
