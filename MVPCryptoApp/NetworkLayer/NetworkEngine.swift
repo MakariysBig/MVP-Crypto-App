@@ -13,6 +13,7 @@ final class NetworkEngine {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = endpoint.method
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: urlRequest) { data, response, error in
             
@@ -20,8 +21,16 @@ final class NetworkEngine {
                 completion(.failure(error))
                 return
             }
+            
+            guard response != nil else {
+                completion(.failure(NetworkError.invalidResponse))
+                return
+            }
 
-            guard response != nil, let data = data else { return }
+            guard let data = data else {
+                completion(.failure(NetworkError.emptyResponse))
+                return
+            }
 
             DispatchQueue.main.async {
                 var responseObject: T
@@ -29,10 +38,16 @@ final class NetworkEngine {
                     responseObject = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(responseObject))
                 } catch {
-                    completion(.failure(error))
+                    completion(.failure(NetworkError.decodingError))
                 }
             }
         }
         dataTask.resume()
     }
+}
+
+enum NetworkError: Error {
+    case emptyResponse
+    case invalidResponse
+    case decodingError
 }

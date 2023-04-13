@@ -5,7 +5,7 @@ import Foundation
 protocol CryptoViewProtocol: AnyObject {
     func updateView()
     func updateButtonImage(with state: SortState)
-    func networkError(with error: Error)
+    func networkError(with error: String)
 }
 
 //MARK: - Presenter

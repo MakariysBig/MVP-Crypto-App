@@ -47,6 +47,8 @@ enum NameOfCrypto: String, CaseIterable {
     case stellar  = "stellar"
     case cardano  = "cardano"
     case xrp      = "xrp"
+    case luna = "luna"
+    case tether = "tether"
 }
 
 enum SortState {
