@@ -61,6 +61,13 @@ final class CryptoCustomTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cryptoName.text   = nil
+        cryptoAmount.text = nil
+        changesValue.text = nil
+    }
+    
     //MARK: - Update cell
     
     func updateCell(model: Crypto) {
@@ -82,6 +89,8 @@ final class CryptoCustomTableViewCell: UITableViewCell {
     //MARK: - Add subviews
     
     private func setup() {
+        backgroundColor = .clear
+        selectionStyle  = .blue
         contentView.addSubview(topStackView)
         contentView.addSubview(bottomStackView)
         updateConstraintsIfNeeded()

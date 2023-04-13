@@ -16,7 +16,6 @@ final class LoginViewController: UIViewController {
         field.leftViewMode = .always
         field.layer.cornerRadius = 10
         field.layer.borderWidth = 1
-        field.tag = 0
         return field
     }()
     
@@ -27,7 +26,7 @@ final class LoginViewController: UIViewController {
         field.leftViewMode = .always
         field.layer.cornerRadius = 10
         field.layer.borderWidth = 1
-        field.tag = 1
+        field.isSecureTextEntry = true
         return field
     }()
     
@@ -105,7 +104,7 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField.tag == 0 {
+        if textField == userNameTextfield {
             passwordTextfield.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()

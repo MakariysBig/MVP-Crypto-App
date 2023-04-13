@@ -114,12 +114,10 @@ extension CryptoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CryptoCustomTableViewCell.identifier, for: indexPath) as? CryptoCustomTableViewCell else { return UITableViewCell() }
         let model = presenter?.getModel(with: indexPath.row)
+        
         if let model = model  {
             cell.updateCell(model: model)
         }
-        
-        cell.backgroundColor = .clear
-        cell.selectionStyle = .blue
         
         return cell
     }
@@ -160,8 +158,8 @@ extension CryptoViewController: CryptoViewProtocol {
         self.tableView.reloadData()
     }
     
-    func networkError(with error: Error) {
+    func networkError(with error: String) {
         self.stopSpinner()
-        self.showAlert(title: "We have a problem", message: "\(error.localizedDescription)")
+        self.showAlert(title: "We have a problem", message: error)
     }
 }

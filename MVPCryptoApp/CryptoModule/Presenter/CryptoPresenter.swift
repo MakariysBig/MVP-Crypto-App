@@ -58,10 +58,10 @@ final class CryptoPresenter: CryptoPresenterProtocol {
                 switch result {
                 case .success(let data):
                     self.cryptoArray.append(data.data)
-                    self.dispatchGroup.leave()
-                case .failure(let error):
-                    self.VC?.networkError(with: error)
+                case .failure(_):
+                    self.VC?.networkError(with: "\(cryptoName.rawValue): not data" )
                 }
+                self.dispatchGroup.leave()
             }
         }
         
